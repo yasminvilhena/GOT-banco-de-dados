@@ -1,0 +1,84 @@
+﻿1- Quais os 5 personagens mais aparecem?
+SELECT 
+    characters.first_appearance,
+    characters.last_appearance,
+    count(characters.character_name) as characters_amount
+FROM
+    characters_v4;
+WHERE
+    episodes_appeared > 59
+group by characters.first_appearance between last_appearance ;
+
+
+
+ 2- Ranking de diretores que mais fizeram episodios
+SELECT 
+    COUNT(episodes.episode_id) AS episodes_amount,
+    episodes.director
+FROM
+    episodes
+GROUP BY episodes.director
+ORDER BY episodes_amount DESC;
+
+
+3- soma de episodios, temporadas e duração.
+
+
+SELECT
+    COUNT(episodes_id) AS 'Quantos tempo de duração tem?'
+FROM
+    Episodes;
+    
+SELECT
+episodes.duration,
+,
+
+;
+
+SELECT
+    COUNT(episodes_id) AS 'Quantas temporadas tem?'
+FROM
+    `got_episodes_v4`;
+    
+SELECT
+episodes.seasons,
+;
+
+SELECT
+    COUNT(episodes_id) AS 'Quantos episódios tem?'
+
+    FROM `got_episodes_v4`;
+    
+SELECT
+
+episodes.episode,
+
+;
+
+
+4- Do total de personagens da série, quantos aparecem no primeiro e também no último episódio? Quais foram eles? */
+
+
+SELECT
+    COUNT(character_id) AS 'Quantos personagens tem na série?'
+FROM
+    characters_v4;;
+    
+SELECT
+characters_v4.character_name,
+characters_v4.first_appearance,
+characters_v4.last_appearance
+FROM characters
+WHERE characters.first_appearance like 2011 AND characters.last_appearance like 2019;
+
+WITH sobreviventes AS (SELECT
+    characters.character_name,
+    characters.first_appearance,
+    characters.last_appearance
+FROM
+    characters
+WHERE
+    characters.first_appearance LIKE 2011
+    AND characters.last_appearance LIKE 2019) SELECT COUNT(character_name) AS 'Quantos personagens sobreviveram?'
+FROM
+    sobreviventes;
