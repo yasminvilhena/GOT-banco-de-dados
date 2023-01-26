@@ -1,4 +1,4 @@
-# GOT-banco-de-
+
 # Projeto do módulo 4 GOT
 Projeto do módulo 4 da Resilia Educação em que fizemos uma análise do banco de dados do Game Of Thrones. 
 
