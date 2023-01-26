@@ -1,8 +1,9 @@
-﻿1- Quais os 5 personagens mais aparecem?
+
+  1- Quais os 5 personagens mais aparecem por episódio  ?
 SELECT 
     characters.first_appearance,
     characters.last_appearance,
-    count(characters.character_name) as characters_amount
+    Count(characters.character_name) as characters_amount
 FROM
     characters_v4;
 WHERE
@@ -16,7 +17,7 @@ SELECT
     COUNT(episodes.episode_id) AS episodes_amount,
     episodes.director
 FROM
-    episodes
+    GOT_episodes_v4
 GROUP BY episodes.director
 ORDER BY episodes_amount DESC;
 
@@ -25,9 +26,9 @@ ORDER BY episodes_amount DESC;
 
 
 SELECT
-    COUNT(episodes_id) AS 'Quantos tempo de duração tem?'
+    COUNT(duration_id) AS 'Quantos tempo de duração tem?'
 FROM
-    Episodes;
+    GOT_episodes_v4;
     
 SELECT
 episodes.duration,
@@ -36,7 +37,7 @@ episodes.duration,
 ;
 
 SELECT
-    COUNT(episodes_id) AS 'Quantas temporadas tem?'
+    COUNT(seasons_id) AS 'Quantas temporadas tem?'
 FROM
     `got_episodes_v4`;
     
@@ -70,15 +71,3 @@ characters_v4.first_appearance,
 characters_v4.last_appearance
 FROM characters
 WHERE characters.first_appearance like 2011 AND characters.last_appearance like 2019;
-
-WITH sobreviventes AS (SELECT
-    characters.character_name,
-    characters.first_appearance,
-    characters.last_appearance
-FROM
-    characters
-WHERE
-    characters.first_appearance LIKE 2011
-    AND characters.last_appearance LIKE 2019) SELECT COUNT(character_name) AS 'Quantos personagens sobreviveram?'
-FROM
-    sobreviventes;
