@@ -19,3 +19,7 @@ As tecnologias utilizadas foram Power BI, MySQL e Xhamps  para a visualização 
 ![gráfico 1](https://user-images.githubusercontent.com/114528129/214830395-63f9ac7c-e772-40c0-9d8d-a9493e3d4b70.jpg)
 
 ![gráfico 4](https://user-images.githubusercontent.com/114528129/214830557-5895a42e-fdea-4e64-9109-7c3e9731204f.jpg)
+
+## Integrantes:
+
+- Day Justiniano, José Lucas Moraes, Washington junior e Yasmin Vilhena
