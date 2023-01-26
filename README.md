@@ -16,5 +16,6 @@ As tecnologias utilizadas foram Power BI, MySQL e Xhamps  para a visualização 
 - Do total de personagens da série, quantos aparecem no primeiro e também no último episódio? Quais foram eles?
 
 ### Exemplos de consultas respondidas:
-![image](https://user-images.githubusercontent.com/114528129/214651493-cb928429-307b-42bc-8307-cf43cc9e3f62.png)
-![image](https://user-images.githubusercontent.com/114528129/214651585-49c654a5-7705-4f47-bcda-428be766ea25.png)
+![gráfico 1](https://user-images.githubusercontent.com/114528129/214830395-63f9ac7c-e772-40c0-9d8d-a9493e3d4b70.jpg)
+
+![gráfico 4](https://user-images.githubusercontent.com/114528129/214830557-5895a42e-fdea-4e64-9109-7c3e9731204f.jpg)
