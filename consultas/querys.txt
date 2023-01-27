@@ -1,5 +1,6 @@
 
-  1- Quais os 5 personagens mais aparecem por episódio  ?
+ 1- Quais os 5 personagens mais aparecem por episódio  ?
+
 SELECT 
     characters.first_appearance,
     characters.last_appearance,
@@ -12,7 +13,8 @@ group by characters.first_appearance between last_appearance ;
 
 
 
- 2- Ranking de diretores que mais fizeram episodios
+ 2- Ranking de diretores que mais fizeram episodios.
+
 SELECT 
     COUNT(episodes.episode_id) AS episodes_amount,
     episodes.director
@@ -57,7 +59,7 @@ episodes.episode,
 ;
 
 
-4- Do total de personagens da série, quantos aparecem no primeiro e também no último episódio? Quais foram eles? */
+4- Do total de personagens da série, quantos aparecem no primeiro e também no último episódio? Quais foram eles? 
 
 
 SELECT
@@ -72,7 +74,7 @@ characters_v4.last_appearance
 FROM characters
 WHERE characters.first_appearance like 2011 AND characters.last_appearance like 2019;
 
-## 5- Qual o Ranking de Avaliação de todas as temporadas de GOT?
+ 5- Qual o Ranking de Avaliação de todas as temporadas de GOT?
 
 CREATE TABLE seasons_avg_rating SELECT episodes.season,
     CAST(AVG(rating) AS DECIMAL (2 , 1 )) 'average_rating' FROM got_episodes_v4
