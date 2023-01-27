@@ -16,45 +16,22 @@ group by characters.first_appearance between last_appearance ;
  2- Ranking de diretores que mais fizeram episodios.
 
 SELECT 
-    COUNT(episodes.episode_id) AS episodes_amount,
-    episodes.director
+    COUNT(episode) AS episode_amount,
+   director
 FROM
     GOT_episodes_v4
-GROUP BY episodes.director
-ORDER BY episodes_amount DESC;
+GROUP BY director
+ORDER BY episode_amount DESC;
 
 
 3- soma de episodios, temporadas e duração.
 
 
-SELECT
-    COUNT(duration_id) AS 'Quantos tempo de duração tem?'
-FROM
-    GOT_episodes_v4;
-    
-SELECT
-episodes.duration,
+SELECT COUNT(episode) AS 'Quantos episodios tem?' FROM got_episodes_v4;
 ,
 
 ;
-
-SELECT
-    COUNT(seasons_id) AS 'Quantas temporadas tem?'
-FROM
-    `got_episodes_v4`;
-    
-SELECT
-episodes.seasons,
-;
-
-SELECT
-    COUNT(episodes_id) AS 'Quantos episódios tem?'
-
-    FROM `got_episodes_v4`;
-    
-SELECT
-
-episodes.episode,
+SELECT SUM(duration) AS 'Quantos duraçao tem?' FROM got_episodes_v4;
 
 ;
 
@@ -76,21 +53,9 @@ WHERE characters.first_appearance like 2011 AND characters.last_appearance like 
 
  5- Qual o Ranking de Avaliação de todas as temporadas de GOT?
 
-CREATE TABLE seasons_avg_rating SELECT episodes.season,
-    CAST(AVG(rating) AS DECIMAL (2 , 1 )) 'average_rating' FROM got_episodes_v4
-  
-WHERE
-    season = 1;
-    
-insert into seasons_avg_rating select episodes.season, cast(avg(rating) as decimal(2,1)) from got.episodes where season = 2;
-insert into seasons_avg_rating select episodes.season, cast(avg(rating) as decimal(2,1)) from got.episodes where season = 3;
-insert into seasons_avg_rating select episodes.season, cast(avg(rating) as decimal(2,1)) from got.episodes where season = 4;
-insert into seasons_avg_rating select episodes.season, cast(avg(rating) as decimal(2,1)) from got.episodes where season = 5;
-insert into seasons_avg_rating select episodes.season, cast(avg(rating) as decimal(2,1)) from got.episodes where season = 6;
-insert into seasons_avg_rating select episodes.season, cast(avg(rating) as decimal(2,1)) from got.episodes where season = 7;
-insert into seasons_avg_rating select episodes.season, cast(avg(rating) as decimal(2,1)) from got.episodes where season = 8;
+SELECT AVG(rating) FROM got_episodes_v4 WHERE season =1;
 
-select * from seasons_avg_rating;
+*repetir para cada season
 
 
 
